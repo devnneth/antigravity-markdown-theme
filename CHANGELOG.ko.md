@@ -6,6 +6,12 @@
 
 ## Unreleased
 
+## 0.1.1 - 2026-07-17
+
+### Fixed
+
+- 마크다운 미리보기에서 하위 목록(Nested List) 하단 영역이 너무 넓게 표시되는 여백 문제 수정
+
 ### Changed
 
 - 기본 테마 파일을 `theme/basic-dark-theme.css`로 이동

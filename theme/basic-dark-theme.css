@@ -109,6 +109,12 @@ li {
   margin: var(--review-space-xs) 0;
 }
 
+li > ul,
+li > ol {
+  margin-top: var(--review-space-xs);
+  margin-bottom: 0;
+}
+
 li::marker {
   color: #e6edf3;
 }

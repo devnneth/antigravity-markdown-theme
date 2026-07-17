@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file. The version
 
 ## Unreleased
 
+## 0.1.1 - 2026-07-17
+
+### Fixed
+
+- Fixed excessive vertical space below nested lists in markdown preview.
+
 ### Changed
 
 - Moved the default theme file to `theme/basic-dark-theme.css`.

@@ -39,6 +39,8 @@ You can also use `inline code` for highlighting small snippets.
 
 ### Task List
 - [x] Completed task
+  - [ ] Sub task
+    - [x] Sub task
 - [ ] Pending task 1
 - [ ] Pending task 2
 
