@@ -2,7 +2,6 @@ const path = require("node:path");
 
 const CUSTOM_CSS_SETTING = "customCss";
 const EXTENSION_CONFIGURATION = "antigravityMarkdownTheme";
-const LEGACY_EXTENSION_CONFIGURATION = "pauseRabbitMarkdownGfm";
 const MANAGED_STYLES_KEY_PREFIX = "managedMarkdownStyles:";
 const PREVIEW_REFRESH_COMMAND = "markdown.preview.refresh";
 
@@ -43,39 +42,16 @@ function resolveLocalCssPath(vscode, folder, cssPath) {
   return vscode.Uri.joinPath(folder.uri, cssPath).fsPath;
 }
 
-function hasExplicitConfigurationValue(configuration, setting) {
-  const inspected = configuration.inspect?.(setting);
-  if (!inspected) return false;
-
-  return [
-    inspected.globalValue,
-    inspected.workspaceValue,
-    inspected.workspaceFolderValue,
-    inspected.globalLanguageValue,
-    inspected.workspaceLanguageValue,
-    inspected.workspaceFolderLanguageValue,
-  ].some((value) => value !== undefined);
-}
-
+// ==================================================================================================
+// 설정된 사용자 지정 CSS 스타일 읽기
+// ==================================================================================================
 function readConfiguredStyles(vscode, resource) {
   const configuration = vscode.workspace.getConfiguration(
     EXTENSION_CONFIGURATION,
     resource,
   );
-  const configuredStyles = normalizeCssPaths(
-    configuration.get(CUSTOM_CSS_SETTING, []),
-  );
-  if (
-    configuredStyles.length > 0 ||
-    hasExplicitConfigurationValue(configuration, CUSTOM_CSS_SETTING)
-  ) {
-    return configuredStyles;
-  }
-
   return normalizeCssPaths(
-    vscode.workspace
-      .getConfiguration(LEGACY_EXTENSION_CONFIGURATION, resource)
-      .get(CUSTOM_CSS_SETTING, []),
+    configuration.get(CUSTOM_CSS_SETTING, []),
   );
 }
 
@@ -150,10 +126,7 @@ function createCustomCssManager(vscode, context) {
   }
 
   const configurationSubscription = vscode.workspace.onDidChangeConfiguration((event) => {
-    if (
-      event.affectsConfiguration(`${EXTENSION_CONFIGURATION}.${CUSTOM_CSS_SETTING}`) ||
-      event.affectsConfiguration(`${LEGACY_EXTENSION_CONFIGURATION}.${CUSTOM_CSS_SETTING}`)
-    ) {
+    if (event.affectsConfiguration(`${EXTENSION_CONFIGURATION}.${CUSTOM_CSS_SETTING}`)) {
       void syncSafely();
     }
   });
@@ -175,7 +148,6 @@ function createCustomCssManager(vscode, context) {
 module.exports = {
   arraysEqual,
   createCustomCssManager,
-  hasExplicitConfigurationValue,
   isRemoteCssPath,
   mergeManagedStyles,
   normalizeCssPaths,

@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file. The version
 
 ## Unreleased
 
+## 0.1.2 - 2026-07-17
+
+### Removed
+
+- Removed the legacy `pauseRabbitMarkdownGfm.customCss` configuration key and its fallback logic.
+
 ## 0.1.1 - 2026-07-17
 
 ### Fixed

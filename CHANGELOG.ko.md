@@ -6,6 +6,12 @@
 
 ## Unreleased
 
+## 0.1.2 - 2026-07-17
+
+### Removed
+
+- 레거시 설정 키 `pauseRabbitMarkdownGfm.customCss` 및 관련 fallback 로직 제거
+
 ## 0.1.1 - 2026-07-17
 
 ### Fixed

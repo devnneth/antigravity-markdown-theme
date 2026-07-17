@@ -4,11 +4,9 @@
 
 Antigravity IDE의 Plan/Review 모드의 테마를 모티프로 만든 Antigravity 및 Visual Studio Code 용 마크다운 테마 플러그인입니다. Custom CSS를 지원합니다.
 
-## 최근 변경 사항 (v0.1.1)
+## 최근 변경 사항 (v0.1.2)
 
-- **Fixed**: 마크다운 미리보기에서 하위 목록(Nested List) 하단 영역이 너무 넓게 표시되는 여백 문제 수정
-- **Changed**: 기본 테마 파일을 `theme/basic-dark-theme.css`로 이동
-- **Changed**: 설치 기본값에서 custom CSS와 `markdown.styles` 경로를 비워 내장 테마만 사용
+- **Removed**: 레거시 설정 키 `pauseRabbitMarkdownGfm.customCss` 및 관련 fallback 로직 제거
 
 전체 릴리스 이력은 [CHANGELOG.ko.md](CHANGELOG.ko.md) (또는 [English](CHANGELOG.md))를 참고하세요.
 

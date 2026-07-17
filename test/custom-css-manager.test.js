@@ -2,7 +2,6 @@ const assert = require("node:assert/strict");
 const test = require("node:test");
 const {
   createCustomCssManager,
-  hasExplicitConfigurationValue,
   isRemoteCssPath,
   mergeManagedStyles,
   normalizeCssPaths,
@@ -45,10 +44,9 @@ test("resolves workspace-relative and file URL CSS paths", () => {
   assert.equal(resolveLocalCssPath(vscode, folder, "file:///tmp/theme.css"), "/tmp/theme.css");
 });
 
-test("prefers the current custom CSS setting and supports the legacy key", () => {
+test("reads the current custom CSS setting", () => {
   const values = {
     antigravityMarkdownTheme: ["current.css"],
-    pauseRabbitMarkdownGfm: ["legacy.css"],
   };
   const vscode = {
     workspace: {
@@ -57,23 +55,9 @@ test("prefers the current custom CSS setting and supports the legacy key", () =>
   };
 
   assert.deepEqual(readConfiguredStyles(vscode, {}), ["current.css"]);
-  values.antigravityMarkdownTheme = [];
-  assert.deepEqual(readConfiguredStyles(vscode, {}), ["legacy.css"]);
 });
 
-test("an explicitly empty current setting disables legacy fallback", () => {
-  const vscode = {
-    workspace: {
-      getConfiguration: (section) => ({
-        get: () => (section === "pauseRabbitMarkdownGfm" ? ["legacy.css"] : []),
-        inspect: () => (section === "antigravityMarkdownTheme" ? { workspaceValue: [] } : {}),
-      }),
-    },
-  };
 
-  assert.equal(hasExplicitConfigurationValue({ inspect: () => ({ workspaceValue: [] }) }, "x"), true);
-  assert.deepEqual(readConfiguredStyles(vscode, {}), []);
-});
 
 test("syncs custom CSS into Markdown styles and creates a local watcher", async () => {
   const updatedStyles = [];

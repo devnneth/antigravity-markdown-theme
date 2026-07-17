@@ -2,7 +2,7 @@
   "name": "antigravity-markdown-theme",
   "displayName": "Antigravity Markdown Theme",
   "description": "A Markdown theme plugin for Antigravity and Visual Studio Code, inspired by the theme of Antigravity IDE's Plan/Review mode. It supports custom CSS.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "icon": "assets/icon.png",
   "publisher": "devnneth",
   "license": "MIT",
@@ -53,17 +53,6 @@
           "default": [],
           "scope": "resource",
           "markdownDescription": "List of CSS file paths to load after the built-in styles to override them. Relative paths are resolved relative to the workspace folder, and saving the file automatically refreshes the Markdown preview."
-        },
-        "pauseRabbitMarkdownGfm.customCss": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "minLength": 1
-          },
-          "default": [],
-          "scope": "resource",
-          "markdownDeprecationMessage": "Use the `antigravityMarkdownTheme.customCss` setting.",
-          "markdownDescription": "Setting for backward compatibility."
         }
       }
     }

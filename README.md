@@ -4,11 +4,9 @@ English | [한국어](README.ko.md)
 
 A Markdown theme plugin for Antigravity and Visual Studio Code, inspired by the theme of Antigravity IDE's Plan/Review mode. It supports custom CSS.
 
-## Recent Changes (v0.1.1)
+## Recent Changes (v0.1.2)
 
-- **Fixed**: Excessive vertical space below nested lists in markdown preview.
-- **Changed**: Moved the default theme file to `theme/basic-dark-theme.css`.
-- **Changed**: Emptied custom CSS and `markdown.styles` paths in installation defaults to use only the built-in theme.
+- **Removed**: Removed the legacy `pauseRabbitMarkdownGfm.customCss` configuration key and its fallback logic.
 
 For full release history, see [CHANGELOG.md](CHANGELOG.md) (or [Korean](CHANGELOG.ko.md)).
 
