@@ -30,7 +30,7 @@
     "node": ">=20"
   },
   "categories": [
-    "Other"
+    "Themes"
   ],
   "activationEvents": [
     "onLanguage:markdown",
