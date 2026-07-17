@@ -1,0 +1,859 @@
+/* Antigravity Markdown Theme - bundled Markdown preview stylesheet */
+
+:root {
+  color-scheme: dark;
+  --review-font-size: calc(var(--markdown-font-size) * 1.2);
+  --review-line-height: 1.6;
+  --review-space-xs: 0.25em;
+  --review-space-sm: 0.75em;
+  --review-space-md: 1em;
+  --review-space-block-top: 1.25em;
+  --review-space-callout-top: 1.75em;
+  --review-space-lg: 1.5em;
+  --review-space-xl: 2em;
+}
+
+html {
+  background: #0d1117;
+}
+
+body,
+body.vscode-body {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: var(--review-space-lg) var(--review-space-lg) var(--review-space-xl);
+  color: #e6edf3;
+  background: #0d1117;
+  font-family: 'Apple SD Gothic Neo', var(--vscode-editor-font-family), 'SF Pro', Jetendard, Victor Mono, D2CodingLigature Nerd Font, Monoplex KR Nerd, SF Mono, D2Coding, Source Code Pro, Menlo, Monaco, 'Courier New', monospace;
+  font-size: var(--review-font-size);
+  font-weight: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #f0f6fc;
+  line-height: 1.4;
+}
+
+h1 {
+  margin: 0 0 var(--review-space-lg);
+  padding: 0;
+  border: 0;
+  font-size: 1.36em;
+  font-weight: 700;
+}
+
+h2 {
+  margin: var(--review-space-xl) 0 var(--review-space-md);
+  padding: 0;
+  border: 0;
+  font-size: 1.14em;
+  font-weight: 700;
+}
+
+h3 {
+  margin: var(--review-space-lg) 0 var(--review-space-sm);
+  font-size: 1em;
+  font-weight: 700;
+}
+
+h4 {
+  margin: var(--review-space-lg) 0 var(--review-space-sm);
+  font-size: 0.93em;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 var(--review-space-md);
+}
+
+strong {
+  color: #f0f6fc;
+  font-weight: 700;
+}
+
+a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  height: 1px;
+  margin: var(--review-space-sm) 0 var(--review-space-xl);
+  padding: 0;
+  border: 0;
+  background: #30363d;
+}
+
+ul,
+ol {
+  margin: 0 0 var(--review-space-md);
+  padding-left: var(--review-space-lg);
+}
+
+li {
+  margin: var(--review-space-xs) 0;
+}
+
+li::marker {
+  color: #e6edf3;
+}
+
+/* Metadata below the document title. */
+.document-meta {
+  margin: 0 0 var(--review-space-sm);
+  padding: var(--review-space-sm) var(--review-space-md);
+  border-left: 4px solid #30363d;
+  color: #e6edf3;
+  background: #010409;
+  font-weight: 600;
+}
+
+.document-meta a {
+  color: #58a6ff;
+  font-weight: 700;
+}
+
+/* Tables */
+table {
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  margin: var(--review-space-block-top) 0 var(--review-space-lg);
+  border: 1px solid #21262d !important;
+  border-spacing: 0;
+  border-collapse: separate !important;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0d1117;
+  font-size: 0.93em;
+  line-height: 1.5;
+}
+
+thead {
+  background: #292e33;
+}
+
+table > thead > tr,
+table > tbody > tr {
+  border: 0 !important;
+  background: transparent;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+  padding: var(--review-space-sm) var(--review-space-md);
+  text-align: left;
+  vertical-align: middle;
+  border: 0 !important;
+  border-right: 1px solid #21262d !important;
+  border-bottom: 1px solid #21262d !important;
+}
+
+table > thead > tr > th {
+  color: #f0f6fc;
+  background: #292e33;
+  font-weight: 700;
+  border-bottom-color: #30363d !important;
+}
+
+table > tbody > tr > td {
+  color: #e6edf3;
+  background: #0d1117;
+}
+
+table > tbody > tr > td:first-child {
+  color: #f0f6fc;
+  font-weight: 700;
+}
+
+table > tbody > tr:last-child > td {
+  border-bottom: 0 !important;
+}
+
+table > thead > tr > th:last-child,
+table > thead > tr > td:last-child,
+table > tbody > tr > th:last-child,
+table > tbody > tr > td:last-child {
+  border-right: 0 !important;
+}
+
+/* Code */
+code {
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: #ceb174;
+  background: #2b2b2b;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 0.88em;
+}
+
+pre {
+  margin: var(--review-space-lg) 0 var(--review-space-lg);
+  padding: var(--review-space-md);
+  overflow: auto;
+  border: 1px solid #21262d;
+  border-radius: 0.75em !important;
+  color: #e6edf3;
+  background: #12171d;
+  background-clip: padding-box;
+  font-size: 0.95em;
+  line-height: var(--review-line-height);
+}
+
+pre code {
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+  background: transparent;
+  font-size: inherit;
+}
+
+table code {
+  font-size: 0.96em;
+}
+
+/* Explicit callouts are used because Markdown preview engines do not agree on GFM alerts. */
+.callout {
+  margin: var(--review-space-callout-top) 0 var(--review-space-lg);
+  padding: var(--review-space-sm) var(--review-space-md);
+  border-left: 3px solid #30363d;
+  color: #e6edf3;
+  background: #000000;
+  line-height: var(--review-line-height);
+}
+
+.callout-title {
+  margin-bottom: 1px;
+  font-size: 0.93em;
+  font-weight: 700;
+}
+
+.callout *:first-child {
+  margin-top: 0 !important;
+}
+
+.callout *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.callout-caution {
+  border-left-color: #f85149;
+}
+
+.callout-caution .callout-title {
+  color: #ff5f56 !important;
+}
+
+.callout-note {
+  border-left-color: #1f6feb;
+}
+
+.callout-note .callout-title {
+  color: #58a6ff !important;
+}
+
+.callout-warning {
+  border-left-color: #d29922;
+}
+
+.callout-warning .callout-title {
+  color: #d29922 !important;
+}
+
+.callout-important {
+  border-left-color: #8957e5;
+}
+
+.callout-important .callout-title {
+  color: #bc8cff !important;
+}
+
+/* Keep native GitHub alerts readable in preview engines that support them. */
+.markdown-alert {
+  margin: var(--review-space-callout-top) 0 var(--review-space-lg);
+  padding: var(--review-space-sm) var(--review-space-md);
+  border-left: 3px solid #30363d;
+  background: #000000;
+  line-height: var(--review-line-height);
+}
+
+.markdown-alert *:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-alert *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-alert-title {
+  margin-bottom: 1px;
+  font-size: 0.93em;
+  font-weight: 700;
+}
+
+/* The title is emitted as real text by the Markdown extension. */
+.markdown-alert::before,
+.markdown-alert-title::before {
+  content: none !important;
+  display: none !important;
+}
+
+.markdown-alert-note {
+  border-left-color: #1f6feb;
+}
+
+.markdown-alert-note .markdown-alert-title {
+  color: #58a6ff !important;
+}
+
+.markdown-alert-tip {
+  border-left-color: #238636;
+}
+
+.markdown-alert-tip .markdown-alert-title {
+  color: #3fb950 !important;
+}
+
+.markdown-alert-important {
+  border-left-color: #8957e5;
+}
+
+.markdown-alert-important .markdown-alert-title {
+  color: #bc8cff !important;
+}
+
+.markdown-alert-warning {
+  border-left-color: #d29922;
+}
+
+.markdown-alert-warning .markdown-alert-title {
+  color: #d29922 !important;
+}
+
+.markdown-alert-caution {
+  border-left-color: #f85149;
+}
+
+.markdown-alert-caution .markdown-alert-title {
+  color: #ff5f56 !important;
+}
+
+.contains-task-list,
+.task-list-item {
+  list-style: none;
+}
+
+.task-list-item-checkbox {
+  appearance: auto;
+  width: 1em;
+  height: 1em;
+  margin: 0 0.5em 0 0;
+  vertical-align: -0.12em;
+  accent-color: #238636;
+  opacity: 1;
+}
+
+blockquote {
+  margin: var(--review-space-lg) 0 var(--review-space-lg);
+  padding: var(--review-space-sm) var(--review-space-md);
+  border-left: 4px solid #30363d;
+  color: #e6edf3;
+  background: #010409;
+  line-height: var(--review-line-height);
+}
+
+blockquote *:first-child {
+  margin-top: 0 !important;
+}
+
+blockquote *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/*
+ * Fallback for preview engines that render GFM alerts as plain blockquotes.
+ * In this document blockquotes 2-6 are CAUTION, NOTE, WARNING, IMPORTANT, NOTE.
+ */
+pre + blockquote:not(.markdown-alert):nth-of-type(2),
+pre + blockquote:not(.markdown-alert):nth-of-type(3),
+pre + blockquote:not(.markdown-alert):nth-of-type(4),
+pre + blockquote:not(.markdown-alert):nth-of-type(5),
+pre + blockquote:not(.markdown-alert):nth-of-type(6) {
+  position: relative !important;
+  margin: var(--review-space-callout-top) 0 var(--review-space-lg) !important;
+  padding: 2.25em var(--review-space-md) var(--review-space-sm) !important;
+  overflow: hidden;
+  border-left-width: 3px;
+  color: #e6edf3;
+  background: #000000;
+}
+
+pre + blockquote:not(.markdown-alert):nth-of-type(2)::before,
+pre + blockquote:not(.markdown-alert):nth-of-type(3)::before,
+pre + blockquote:not(.markdown-alert):nth-of-type(4)::before,
+pre + blockquote:not(.markdown-alert):nth-of-type(5)::before,
+pre + blockquote:not(.markdown-alert):nth-of-type(6)::before {
+  position: absolute;
+  top: 0.55em !important;
+  left: 1em !important;
+  font-size: 0.93em;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+pre + blockquote:not(.markdown-alert):nth-of-type(2) {
+  border-left-color: #f85149;
+}
+
+pre + blockquote:not(.markdown-alert):nth-of-type(2)::before {
+  content: "CAUTION" !important;
+  color: #ff5f56 !important;
+}
+
+pre + blockquote:not(.markdown-alert):nth-of-type(2) > p:first-of-type {
+  margin-left: 5.4em !important;
+  overflow: hidden;
+  text-indent: -5.4em !important;
+}
+
+pre + blockquote:not(.markdown-alert):nth-of-type(3),
+pre + blockquote:not(.markdown-alert):nth-of-type(6) {
+  border-left-color: #1f6feb;
+}
+
+pre + blockquote:not(.markdown-alert):nth-of-type(3)::before,
+pre + blockquote:not(.markdown-alert):nth-of-type(6)::before {
+  content: "NOTE" !important;
+  color: #58a6ff !important;
+}
+
+pre + blockquote:not(.markdown-alert):nth-of-type(3) > p:first-of-type,
+pre + blockquote:not(.markdown-alert):nth-of-type(6) > p:first-of-type {
+  margin-left: 3.6em !important;
+  overflow: hidden;
+  text-indent: -3.6em !important;
+}
+
+pre + blockquote:not(.markdown-alert):nth-of-type(4) {
+  border-left-color: #d29922;
+}
+
+pre + blockquote:not(.markdown-alert):nth-of-type(4)::before {
+  content: "WARNING" !important;
+  color: #d29922 !important;
+}
+
+pre + blockquote:not(.markdown-alert):nth-of-type(4) > p:first-of-type {
+  margin-left: 6.4em !important;
+  overflow: hidden;
+  text-indent: -6.4em !important;
+}
+
+pre + blockquote:not(.markdown-alert):nth-of-type(5) {
+  border-left-color: #8957e5;
+}
+
+pre + blockquote:not(.markdown-alert):nth-of-type(5)::before {
+  content: "IMPORTANT" !important;
+  color: #bc8cff !important;
+}
+
+pre + blockquote:not(.markdown-alert):nth-of-type(5) > p:first-of-type {
+  margin-left: 6.8em !important;
+  overflow: hidden;
+  text-indent: -6.8em !important;
+}
+
+/*
+ * Some VS Code-compatible previews wrap every block, so nth-of-type restarts.
+ * All five alerts in this document immediately follow a fenced code block.
+ */
+h4:nth-of-type(1) ~ pre + blockquote:not(.markdown-alert) {
+  position: relative !important;
+  margin: var(--review-space-callout-top) 0 var(--review-space-lg) !important;
+  padding: 2.25em var(--review-space-md) var(--review-space-sm) !important;
+  overflow: hidden;
+  border-left: 3px solid #1f6feb;
+  color: #e6edf3;
+  background: #000000;
+}
+
+h4:nth-of-type(1) ~ pre + blockquote:not(.markdown-alert)::before {
+  content: "NOTE" !important;
+  position: absolute;
+  top: 0.55em !important;
+  left: 1em !important;
+  color: #58a6ff !important;
+  font-size: 0.93em;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+h4:nth-of-type(1) ~ pre + blockquote:not(.markdown-alert) > p:first-of-type {
+  margin-left: 3.6em !important;
+  overflow: hidden;
+  text-indent: -3.6em !important;
+}
+
+h4:nth-of-type(1) + pre + blockquote:not(.markdown-alert) {
+  border-left-color: #f85149;
+}
+
+h4:nth-of-type(1) + pre + blockquote:not(.markdown-alert)::before {
+  content: "CAUTION" !important;
+  color: #ff5f56 !important;
+}
+
+h4:nth-of-type(1) + pre + blockquote:not(.markdown-alert) > p:first-of-type {
+  margin-left: 5.4em !important;
+  text-indent: -5.4em !important;
+}
+
+h4:nth-of-type(2) + pre + blockquote:not(.markdown-alert) {
+  border-left-color: #d29922;
+}
+
+h4:nth-of-type(2) + pre + blockquote:not(.markdown-alert)::before {
+  content: "WARNING" !important;
+  color: #d29922 !important;
+}
+
+h4:nth-of-type(2) + pre + blockquote:not(.markdown-alert) > p:first-of-type {
+  margin-left: 6.4em !important;
+  text-indent: -6.4em !important;
+}
+
+h4:nth-of-type(3) + pre + blockquote:not(.markdown-alert) {
+  border-left-color: #8957e5;
+}
+
+h4:nth-of-type(3) + pre + blockquote:not(.markdown-alert)::before {
+  content: "IMPORTANT" !important;
+  color: #bc8cff !important;
+}
+
+h4:nth-of-type(3) + pre + blockquote:not(.markdown-alert) > p:first-of-type {
+  margin-left: 6.8em !important;
+  text-indent: -6.8em !important;
+}
+
+/* VS Code native preview exposes the source line on each rendered block. */
+blockquote:is(
+  [data-line="27"],
+  [data-line="28"],
+  [data-line="47"],
+  [data-line="48"],
+  [data-line="58"],
+  [data-line="59"],
+  [data-line="90"],
+  [data-line="91"],
+  [data-line="117"],
+  [data-line="118"]
+),
+:is(
+  [data-line="27"],
+  [data-line="28"],
+  [data-line="47"],
+  [data-line="48"],
+  [data-line="58"],
+  [data-line="59"],
+  [data-line="90"],
+  [data-line="91"],
+  [data-line="117"],
+  [data-line="118"]
+) blockquote,
+blockquote:has(:is(
+  [data-line="27"],
+  [data-line="28"],
+  [data-line="47"],
+  [data-line="48"],
+  [data-line="58"],
+  [data-line="59"],
+  [data-line="90"],
+  [data-line="91"],
+  [data-line="117"],
+  [data-line="118"]
+)) {
+  position: relative;
+  margin: var(--review-space-callout-top) 0 var(--review-space-lg);
+  padding: 2.25em var(--review-space-md) var(--review-space-sm);
+  overflow: hidden;
+  border-left: 3px solid var(--callout-color);
+  color: #e6edf3;
+  background: #000000;
+}
+
+blockquote:is(
+  [data-line="27"],
+  [data-line="28"],
+  [data-line="47"],
+  [data-line="48"],
+  [data-line="58"],
+  [data-line="59"],
+  [data-line="90"],
+  [data-line="91"],
+  [data-line="117"],
+  [data-line="118"]
+)::before,
+:is(
+  [data-line="27"],
+  [data-line="28"],
+  [data-line="47"],
+  [data-line="48"],
+  [data-line="58"],
+  [data-line="59"],
+  [data-line="90"],
+  [data-line="91"],
+  [data-line="117"],
+  [data-line="118"]
+) blockquote::before,
+blockquote:has(:is(
+  [data-line="27"],
+  [data-line="28"],
+  [data-line="47"],
+  [data-line="48"],
+  [data-line="58"],
+  [data-line="59"],
+  [data-line="90"],
+  [data-line="91"],
+  [data-line="117"],
+  [data-line="118"]
+))::before {
+  content: var(--callout-title) !important;
+  position: absolute;
+  top: 0.55em;
+  left: 1em;
+  color: var(--callout-title-color);
+  font-size: 0.93em;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+blockquote:is(
+  [data-line="27"],
+  [data-line="28"],
+  [data-line="47"],
+  [data-line="48"],
+  [data-line="58"],
+  [data-line="59"],
+  [data-line="90"],
+  [data-line="91"],
+  [data-line="117"],
+  [data-line="118"]
+) > p:first-of-type,
+:is(
+  [data-line="27"],
+  [data-line="28"],
+  [data-line="47"],
+  [data-line="48"],
+  [data-line="58"],
+  [data-line="59"],
+  [data-line="90"],
+  [data-line="91"],
+  [data-line="117"],
+  [data-line="118"]
+) blockquote > p:first-of-type,
+blockquote:has(:is(
+  [data-line="27"],
+  [data-line="28"],
+  [data-line="47"],
+  [data-line="48"],
+  [data-line="58"],
+  [data-line="59"],
+  [data-line="90"],
+  [data-line="91"],
+  [data-line="117"],
+  [data-line="118"]
+)) > p:first-of-type {
+  width: 100%;
+  margin-left: var(--callout-marker-width);
+  overflow: hidden;
+  text-indent: calc(-1 * var(--callout-marker-width));
+  transform: translateX(calc(-1 * var(--callout-marker-width)));
+}
+
+[data-line="27"],
+[data-line="28"],
+blockquote:has(:is([data-line="27"], [data-line="28"])) {
+  --callout-color: #f85149;
+  --callout-marker-width: 5.4em;
+  --callout-title: "CAUTION";
+  --callout-title-color: #ff5f56;
+}
+
+[data-line="47"],
+[data-line="48"],
+[data-line="117"],
+[data-line="118"],
+blockquote:has(:is([data-line="47"], [data-line="48"], [data-line="117"], [data-line="118"])) {
+  --callout-color: #1f6feb;
+  --callout-marker-width: 3.6em;
+  --callout-title: "NOTE";
+  --callout-title-color: #58a6ff;
+}
+
+[data-line="58"],
+[data-line="59"],
+blockquote:has(:is([data-line="58"], [data-line="59"])) {
+  --callout-color: #d29922;
+  --callout-marker-width: 6.4em;
+  --callout-title: "WARNING";
+  --callout-title-color: #d29922;
+}
+
+[data-line="90"],
+[data-line="91"],
+blockquote:has(:is([data-line="90"], [data-line="91"])) {
+  --callout-color: #8957e5;
+  --callout-marker-width: 6.8em;
+  --callout-title: "IMPORTANT";
+  --callout-title-color: #bc8cff;
+}
+
+:is([data-line="47"], [data-line="48"], [data-line="117"], [data-line="118"]) blockquote::before,
+blockquote:is([data-line="47"], [data-line="48"], [data-line="117"], [data-line="118"])::before,
+blockquote:has(:is([data-line="47"], [data-line="48"], [data-line="117"], [data-line="118"]))::before {
+  content: "NOTE" !important;
+}
+
+/* Semantic alerts from the extension must bypass the legacy line-based fallback. */
+blockquote.markdown-alert {
+  position: relative !important;
+  margin: var(--review-space-callout-top) 0 var(--review-space-lg) !important;
+  padding: var(--review-space-sm) var(--review-space-md) !important;
+  overflow: visible !important;
+  border-left-width: 3px !important;
+  background: #000000 !important;
+}
+
+blockquote.markdown-alert-note {
+  border-left-color: #1f6feb !important;
+}
+
+blockquote.markdown-alert-tip {
+  border-left-color: #238636 !important;
+}
+
+blockquote.markdown-alert-important {
+  border-left-color: #8957e5 !important;
+}
+
+blockquote.markdown-alert-warning {
+  border-left-color: #d29922 !important;
+}
+
+blockquote.markdown-alert-caution {
+  border-left-color: #f85149 !important;
+}
+
+blockquote.markdown-alert::before,
+blockquote.markdown-alert:hover::before {
+  content: none !important;
+  display: none !important;
+}
+
+blockquote.markdown-alert > p,
+blockquote.markdown-alert:hover > p {
+  width: auto !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  overflow: visible !important;
+  text-indent: 0 !important;
+  transform: none !important;
+}
+
+/* Preview engines may inject action controls while hovering over a rendered block. */
+.callout,
+.markdown-alert,
+blockquote,
+.callout:hover,
+.markdown-alert:hover,
+blockquote:hover {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+blockquote {
+  isolation: isolate;
+}
+
+.callout:hover,
+.markdown-alert:hover,
+blockquote:hover,
+blockquote:hover > p:not(.markdown-alert-title):not(.callout-title) {
+  color: #e6edf3 !important;
+}
+
+.callout-title,
+.markdown-alert-title,
+blockquote::before,
+.callout:hover .callout-title,
+.markdown-alert:hover .markdown-alert-title,
+blockquote:hover::before {
+  display: block !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  transition: none !important;
+  pointer-events: none;
+}
+
+blockquote > p,
+blockquote:hover > p {
+  position: relative;
+  z-index: 1;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Disable the built-in source-line hover marker that also uses ::before. */
+body.showEditorSelection .code-line:hover::before,
+body.showEditorSelection .code-active-line::before {
+  border-left: 0 !important;
+}
+
+/* Keep the callout title geometry independent from the preview hover marker. */
+blockquote::before,
+blockquote:hover::before {
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  transform: none !important;
+}
+
+@media (max-width: 640px) {
+  body,
+  body.vscode-body {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  table > thead > tr > th,
+  table > thead > tr > td,
+  table > tbody > tr > th,
+  table > tbody > tr > td {
+    padding: 0.65em 0.75em;
+  }
+}

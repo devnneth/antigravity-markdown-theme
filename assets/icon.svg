@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Antigravity Markdown Theme</title>
+  <desc id="desc">The Antigravity A mark on a dark review-theme tile with a Markdown heading badge.</desc>
+  <defs>
+    <linearGradient id="tile" x1="34" y1="22" x2="220" y2="238" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#161B22"/>
+      <stop offset="1" stop-color="#090C10"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="19" y1="22" x2="88" y2="95" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE432"/>
+      <stop offset=".24" stop-color="#FC8A3D"/>
+      <stop offset=".49" stop-color="#FC413D"/>
+      <stop offset=".7" stop-color="#7A7BFF"/>
+      <stop offset="1" stop-color="#3186FF"/>
+    </linearGradient>
+    <radialGradient id="markGreen" cx="0" cy="0" r="1" gradientTransform="translate(23 66) rotate(-48) scale(55 43)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00B95C"/>
+      <stop offset=".72" stop-color="#00B95C" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#00B95C" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="markBlue" cx="0" cy="0" r="1" gradientTransform="translate(66 89) rotate(-122) scale(55 46)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3186FF"/>
+      <stop offset=".78" stop-color="#3186FF" stop-opacity=".82"/>
+      <stop offset="1" stop-color="#3186FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="markYellow" cx="0" cy="0" r="1" gradientTransform="translate(44 19) rotate(90) scale(42 38)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFEE48"/>
+      <stop offset=".82" stop-color="#FBBC04" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#FBBC04" stop-opacity="0"/>
+    </radialGradient>
+    <path id="antigravityA" d="M89.6992 93.695C94.3659 97.195 101.366 94.8617 94.9492 88.445C75.6992 69.7783 79.7825 18.445 55.8659 18.445C31.9492 18.445 36.0325 69.7783 16.7825 88.445C9.78251 95.445 17.3658 97.195 22.0325 93.695C40.1159 81.445 38.9492 59.8617 55.8659 59.8617C72.7825 59.8617 71.6159 81.445 89.6992 93.695Z"/>
+    <clipPath id="markClip">
+      <use href="#antigravityA"/>
+    </clipPath>
+    <filter id="tileShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".42"/>
+    </filter>
+    <filter id="badgeShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#000" flood-opacity=".5"/>
+    </filter>
+  </defs>
+
+  <rect x="12" y="12" width="232" height="232" rx="48" fill="url(#tile)" filter="url(#tileShadow)"/>
+  <rect x="12.75" y="12.75" width="230.5" height="230.5" rx="47.25" fill="none" stroke="#30363D" stroke-width="1.5"/>
+
+  <!-- Review-mode document lines, kept subtle so the A remains dominant. -->
+  <path d="M39 196H135M39 211H116" stroke="#30363D" stroke-width="6" stroke-linecap="round" opacity=".72"/>
+
+  <!-- Exact Antigravity symbol silhouette supplied with the project. -->
+  <g transform="translate(31 12) scale(2.15)">
+    <use href="#antigravityA" fill="url(#mark)"/>
+    <g clip-path="url(#markClip)">
+      <rect x="7" y="13" width="95" height="88" fill="url(#markYellow)"/>
+      <rect x="7" y="13" width="95" height="88" fill="url(#markGreen)"/>
+      <rect x="7" y="13" width="95" height="88" fill="url(#markBlue)"/>
+    </g>
+  </g>
+
+  <!-- Markdown heading badge: a compact # glyph that survives marketplace thumbnail sizes. -->
+  <g filter="url(#badgeShadow)">
+    <rect x="165" y="165" width="62" height="62" rx="18" fill="#161B22"/>
+    <rect x="165.75" y="165.75" width="60.5" height="60.5" rx="17.25" fill="none" stroke="#58A6FF" stroke-width="1.5"/>
+    <path d="M190 180L186 212M207 180L203 212M178 190H214M176 202H212" fill="none" stroke="#F0F6FC" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,91 @@
+{
+  "name": "antigravity-markdown-theme",
+  "displayName": "Antigravity Markdown Theme",
+  "description": "A Markdown theme plugin for Antigravity and Visual Studio Code, inspired by the theme of Antigravity IDE's Plan/Review mode. It supports custom CSS.",
+  "version": "0.1.0",
+  "icon": "assets/icon.png",
+  "publisher": "devnneth",
+  "license": "MIT",
+  "author": {
+    "name": "devnneth",
+    "url": "https://github.com/devnneth"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devnneth/antigravity-markdown-theme.git"
+  },
+  "homepage": "https://github.com/devnneth/antigravity-markdown-theme#readme",
+  "bugs": {
+    "url": "https://github.com/devnneth/antigravity-markdown-theme/issues"
+  },
+  "keywords": [
+    "antigravity",
+    "markdown",
+    "gfm",
+    "preview",
+    "theme"
+  ],
+  "engines": {
+    "vscode": "^1.70.0",
+    "node": ">=20"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown",
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "markdown.markdownItPlugins": true,
+    "markdown.previewStyles": [
+      "./theme/basic-dark-theme.css"
+    ],
+    "configuration": {
+      "title": "Antigravity Markdown Theme",
+      "properties": {
+        "antigravityMarkdownTheme.customCss": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "default": [],
+          "scope": "resource",
+          "markdownDescription": "List of CSS file paths to load after the built-in styles to override them. Relative paths are resolved relative to the workspace folder, and saving the file automatically refreshes the Markdown preview."
+        },
+        "pauseRabbitMarkdownGfm.customCss": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "default": [],
+          "scope": "resource",
+          "markdownDeprecationMessage": "Use the `antigravityMarkdownTheme.customCss` setting.",
+          "markdownDescription": "Setting for backward compatibility."
+        }
+      }
+    }
+  },
+  "main": "./extension.js",
+  "files": [
+    "assets",
+    "extension.js",
+    "src",
+    "scripts",
+    "theme",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "check": "node --check extension.js && node --check src/*.js",
+    "test": "node --test test/*.test.js",
+    "package:vsix": "vsce package"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "3.9.2"
+  }
+}
